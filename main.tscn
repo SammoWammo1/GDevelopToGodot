@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://uwqrwp47vc07"]
+
+[ext_resource type="Script" uid="uid://dfkbu5yflo6x3" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="Gradient" id="Gradient_ig7tw"]
+offsets = PackedFloat32Array(0, 0.6686747)
+colors = PackedColorArray(0.31764707, 0, 1, 1, 0.62352943, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xm2m"]
+gradient = SubResource("Gradient_ig7tw")
+
+[node name="Root" type="Control" unique_id=1238955842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="Root" type="Node" parent="." unique_id=2005724934]
+
+[node name="Scene" type="Node2D" parent="Root" unique_id=805814722]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=424817835]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -24.0
+offset_right = 1181.0
+offset_bottom = 691.0
+texture = SubResource("GradientTexture2D_0xm2m")
+
+[node name="Main" type="Control" parent="." unique_id=1089087765]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Main" unique_id=641813127]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 20.0
+offset_right = 950.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 80
+text = "GDevelop to Godot"
+
+[node name="Label2" type="Label" parent="Main" unique_id=879094928]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 126.0
+offset_right = 887.0
+offset_bottom = 201.0
+text = "Convert your GDevelop game/prototype into Godot for efficient development!
+Grab a JSON file from your GDevelop system and put it in, and we will
+convert it!"
+horizontal_alignment = 1
+
+[node name="GDevelop" type="FileDialog" parent="Main" unique_id=311614547]
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+access = 2
+
+[node name="Godot" type="FileDialog" parent="Main" unique_id=1880062978]
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+access = 2
+
+[node name="Gdevelopbutton" type="Button" parent="Main" unique_id=1595464104]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 227.0
+offset_right = 856.0
+offset_bottom = 286.0
+text = "Pick GDevelop folder"
+
+[node name="Godotbutton" type="Button" parent="Main" unique_id=338117454]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 363.0
+offset_right = 856.0
+offset_bottom = 422.0
+text = "Pick Godot folder"
+
+[node name="Button3" type="Button" parent="Main" unique_id=1495925982]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 560.0
+offset_right = 870.0
+offset_bottom = 619.0
+text = "Begin conversion"
+
+[node name="Label3" type="Label" parent="Main" unique_id=2093468583]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 294.0
+offset_right = 961.0
+offset_bottom = 343.0
+text = "Export your GDevelop game to a .zip file, and export it to a folder! Make sure the .json file is named
+game.json!"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Main" unique_id=444463731]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 428.0
+offset_right = 926.0
+offset_bottom = 503.0
+text = "Please make a Godot game folder before we begin. You should know how to do this.
+We also recommend resizing the game resolution in that game file to not have anything
+looking funny."
+horizontal_alignment = 1
+
+[node name="Conversion" type="Control" parent="." unique_id=289981370]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="Label2" type="Label" parent="Conversion" unique_id=1397265650]
+layout_mode = 0
+offset_left = 532.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 57
+text = "Status: Progressing"
+horizontal_alignment = 3
+
+[node name="Label" type="Label" parent="Conversion" unique_id=1882756811]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 314.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 57
+text = "Conversion"
+
+[node name="Notes" type="Label" parent="Conversion" unique_id=247584210]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 86.0
+offset_right = 958.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 23
+text = "Notes:
+"
+
+[node name="Label3" type="Label" parent="Conversion" unique_id=684241362]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 91.0
+offset_right = 1141.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 51
+text = "Use arrow keys to move
+notes!"
+autowrap_mode = 3
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Conversion" unique_id=1584540635]
+oversampling_override = 1.0
+title = "Please do this!"
+initial_position = 2
+size = Vector2i(626, 158)
+ok_button_text = "Added!"
+dialog_text = "There will be a file called \"GDtoGodot.gd\" in the exporter files. Copy it to your project.
+Go into your project right now, and add it as a Global, found in Project Settings.
+Then save and close it. Then press the button below.
+This is an important thing to do, otherwise it will not work and WILL break."
+dialog_close_on_escape = false
+
+[node name="ObjectToSpawn" type="Node" parent="." unique_id=379614408]
+
+[connection signal="dir_selected" from="Main/GDevelop" to="." method="_on_GDevelop_dir_selected"]
+[connection signal="dir_selected" from="Main/Godot" to="." method="_on_godot_dir_selected"]
+[connection signal="pressed" from="Main/Gdevelopbutton" to="." method="GDevelopButton"]
+[connection signal="pressed" from="Main/Godotbutton" to="." method="_on_godotbutton_pressed"]
+[connection signal="pressed" from="Main/Button3" to="." method="_begin_process"]
